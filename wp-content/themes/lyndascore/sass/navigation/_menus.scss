@@ -1,0 +1,298 @@
+//main container
+.main-navigation {
+  position: relative;
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
+  font-family: $font__main;
+  text-transform: uppercase;
+  background: #313131;
+
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      opacity: 1;
+      //top: 1.5em;
+      left: -999em;
+      z-index: 99999;
+      background: #4d4d4d;
+
+      ul {
+        left: -999em;
+        top: 0;
+      }
+
+      li {
+
+        &:hover > ul {
+          left: 100%;
+        }
+      }
+
+      a {
+        width: 200px;
+      }
+
+      :hover > a {
+      }
+
+      //hover states for the dropdown
+      a:hover {
+        background: #313131;
+      }
+    }
+
+    li:hover > ul {
+      left: auto;
+    }
+  }
+  li {
+    float: left;
+    position: relative;
+
+    //hover state for the bar
+    &:hover > a {
+      color:#fff;
+      background: #4d4d4d;
+    }
+  }
+
+  //seperates the labels and give them style
+  a {
+    @include font-size(.9);
+    line-height: 1.3em;
+    color:#ffffff;
+    padding:1.3em 1em;
+    display: block;
+    text-decoration: none;
+  }
+
+  //highlights when the page is selected or the dropdown item is selected
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a {
+    background: #979797;
+    color: #fff;
+  }
+
+  .current-menu-parent{
+    background-color: #d1d1d1;
+
+    & > a{
+      color: #5c5c5c;
+    }
+
+  }
+}
+
+/* Small menu. */
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+
+
+  .menu-toggle,
+  .main-navigation.toggled .nav-menu {
+    font-family: $font__main;
+    display: block;
+    padding: 0 0;
+    font-weight: normal;
+    @include font-size(.9);
+    text-decoration: none;
+    line-height: 3.75em;
+    color:#ffffff;
+    background: transparent;
+
+  }
+
+  .menu-toggle{
+    //button settings
+    padding: 0 1em;
+    border: none;
+    box-shadow: none;
+    display: block;
+
+    &:hover{
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .nav-menu{
+    border-top: solid 1px #fff;
+  }
+
+  //remove padding for ul since we added it for desktop
+  .main-navigation {
+    ul {
+
+      padding-left: 0;
+      display: none;
+
+
+
+      ul{
+        float: none;
+        box-shadow:none;
+        left:0;
+        display:block;
+
+        ul{
+          left:0;
+        }
+
+        a{
+          width:100%;
+        }
+
+        li{
+
+          &:hover > ul {
+            left:auto;
+          }
+
+        }
+      }
+
+    }
+
+    li{
+
+      float: none;
+      display: block;
+
+
+
+      li{
+        a{
+          padding-left: 4em;
+        }
+
+        li{
+          a{
+            padding-left: 6em;
+          }
+        }
+      }
+
+      a{
+        padding: 1.3em 2em;
+      }
+
+      &:hover > a {
+        color:#4d4d4d;
+        background: #fff;
+      }
+
+    }
+
+    .current_menu_parent{
+      background-color: #d1d1d1;
+      color: #5c5c5c;
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a {
+      background: transparent;
+      color: #fff;
+    }
+
+
+
+  }
+
+  .main-navigation ul ul,
+  .main-navigation ul ul ul {
+    position: relative;
+  }
+
+
+
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+  .site-main & {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
+
+  & .nav-previous {
+    float: left;
+    width: 50%;
+  }
+
+  & .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+//Social Menu
+
+.menu-social{
+
+  ul{
+    float:right;
+    text-align: center;
+    list-style: none;
+
+    li{
+      position: relative;
+      display: inline-block;
+
+      a{
+        &:before{
+          display: inline-block;
+          padding:0 5px;
+          vertical-align: top;
+          font-family: 'Fontawesome';
+          font-size: 20px;
+          color:#fff;
+          -webkit-font-smoothing: antialiased;
+          content: '\f0c0';
+        }
+
+        //FIND the href and change its content based on the link
+        //for a full theme add all social links here
+        &[href*='facebook.com']::before{
+          content: '\f09a';
+        }
+        &[href*='twitter.com']::before{
+          content: '\f099';
+        }
+        &[href*='youtube.com']::before{
+          content: '\f16a';
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 991px){
+  #menu-social ul{
+    top:0;
+    right:78px;
+    display:block;
+    position: absolute;
+  }
+  #menu-social li a{
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+}

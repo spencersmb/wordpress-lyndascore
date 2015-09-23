@@ -1,0 +1,181 @@
+.site-content{
+  padding-bottom:4em;
+  background-color: #b2b2b2;
+}
+
+.single .site-content, .page .site-content{
+  background-color: #fff;
+}
+
+.site-main {
+	//margin: 0 $size__site-sidebar 0 0;
+//    background-color: #b2b2b2;
+
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .gallery{
+    margin-bottom: 1.5em;
+
+    img{
+      max-width: 100%;
+      height:auto;
+      display: block;
+      margin: 0 auto;
+      border:none;
+    }
+  }
+
+  .gallery-item{
+    position: relative;
+    margin:0px 15px 15px 0;
+    background-color: #333333;
+    overflow: hidden;
+    width: auto;
+
+    &:hover{
+      .gallery-caption{
+        opacity: 1;
+      }
+    }
+  }
+
+  .comment-navigation, .paging-navigation, .post-navigation{
+    font-size: 18px;
+    font-family: $font__secondary;
+    color:#000;
+
+    .nav-next{
+      width:50%;
+      float: right;
+      padding-left:15%;
+      text-align: right;
+
+      h1{
+        margin:0;
+        font-size: 28px;
+      }
+    }
+    .nav-previous{
+      width:50%;
+      float:left;
+      padding-right:15%;
+
+      h1{
+        margin:0;
+        font-size: 28px;
+      }
+    }
+  }
+
+  .post-navigation{
+    margin:0 0 0 auto;
+  }
+
+  .nav-indicator{
+    margin-bottom: 1em;
+  }
+
+  .post-nav-box{
+    padding: 2em 0;
+    margin-bottom: 4em;
+    border-top:hsl(0, 0%, 80%) solid 1px;
+    border-bottom:hsl(0, 0%, 80%) solid 1px;
+    display: inline-block;
+    width: 100%;
+  }
+
+
+}
+
+.site-content .widget-area {
+    float: none;
+    max-width: 780px;
+    width: auto;
+    margin: 1em auto 0;
+    padding:4rem;
+    background-color: #fff;
+}
+
+.widget-area{
+  ul{
+    word-wrap: break-word;
+  }
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+}
+
+.entry-header,
+.entry-content,
+.entry-footer,
+.tag-links,
+.post-navigation,
+.comments-area,
+.paging-navigation{
+  position: relative;
+  max-width: 780px;
+  max-width: 50rem;
+  padding:0 4rem;
+  margin:0 auto;
+
+  h1, h2{
+    margin-top: 0;
+  }
+}
+
+//MEDIA QUARIES
+@media screen and (min-width: 980px) {
+
+  .entry-header,
+  .entry-content,
+  .entry-footer,
+  .tag-links,
+  .post-navigation,
+  .comments-area,
+  .paging-navigation{
+    margin-right: 0;
+  }
+
+  .site-content .widget-area {
+    float: right;
+    max-width: none;
+    width: $size__site-sidebar;
+    margin:0;
+  }
+
+  .content-area {
+    float: left;
+    //shifted -25% of the size of the sidebar
+    width: $size__site-main; //100%
+    margin-left: -380px;
+    padding-left: 380px;
+  }
+}
+
+
+@media screen and (min-width: 1600px) {
+  .entry-header,
+  .entry-content,
+  .entry-meta,
+  .entry-footer,
+  .tag-links,
+  .post-navigation,
+  .comments-area,
+  .paging-navigation{
+    margin-right: 170px;
+  }
+
+}

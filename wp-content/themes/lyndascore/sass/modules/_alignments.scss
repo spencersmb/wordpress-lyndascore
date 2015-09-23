@@ -1,0 +1,44 @@
+.alignleft {
+	display: inline-block;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline-block;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+}
+
+.alignleft{
+  width:50%;
+  float:left;
+  padding:1em 0 0;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+
+.alignright{
+  width:50%;
+  float:right;
+  padding:1em 0 0;
+  margin-left: 2em;
+}
+
+@media screen and (min-width: 1320px) {
+  .alignleft {
+    margin-left: -160px;
+  }
+
+}
+
+@media screen and (min-width: 1820px) {
+  .alignright {
+    margin-right: -160px;
+  }
+}

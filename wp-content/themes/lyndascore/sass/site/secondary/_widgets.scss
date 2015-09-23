@@ -1,0 +1,81 @@
+.widget {
+  margin: 0 0 4em;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+
+  /* Make sure select elements fit in widgets. */
+  select {
+    max-width: 100%;
+  }
+
+  h1{
+    @include font-size(1.1);
+  }
+
+  a{
+    @include font-size(1);
+    font-weight:700;
+    color:#000;
+  }
+
+  ul, ol{
+    margin: 0 0 0 0;
+    list-style-type:none;
+    padding:0;
+  }
+
+  li{
+    padding:1em 0 0;
+
+    ul, ol{
+      margin-top:0;
+    }
+
+    li{
+      margin-left: 1.5em;
+    }
+  }
+}
+
+/* Search widget. */
+
+.widget_search{
+  width: 100%;
+
+  .search-field{
+    @include font-size(1.2);
+  }
+}
+.widget_search .search-submit {
+  display: none;
+}
+
+.widget-title{
+  margin-bottom:1em;
+  font-size: 24px;
+  border-bottom: 2px solid #000000;
+}
+
+//Footer widget id/class set in the sidebar-footer.php file
+.footer-widgets{
+  margin: 0 auto;
+
+  a{
+    color:#fff;
+    font-weight: 400;
+  }
+
+  .widget-title, .footer-widgets, .widget a:hover {
+    color:#fff;
+    border-color:#fff;
+
+  }
+
+  .widget{
+    float:left;
+    width: 320px;
+    margin: 0 4rem 8rem 4rem;
+  }
+}
+
+
